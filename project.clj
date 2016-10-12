@@ -5,7 +5,8 @@
                  [binaryage/devtools "0.8.2"]
                  [re-frame "0.8.0"]]
 
-  :plugins [[lein-cljsbuild "1.1.4"]]
+  :plugins [[lein-cljsbuild "1.1.4"]
+            [nightlight/lein-nightlight "1.0.0"]]
 
   :min-lein-version "2.5.3"
 

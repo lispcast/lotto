@@ -1,0 +1,1 @@
+(ns lotto.core)

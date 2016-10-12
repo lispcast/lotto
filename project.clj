@@ -5,8 +5,7 @@
                  [binaryage/devtools "0.8.2"]
                  [re-frame "0.8.0"]]
 
-  :plugins [[lein-cljsbuild "1.1.4"]
-            [nightlight/lein-nightlight "1.0.0"]]
+  :plugins [[lein-cljsbuild "1.1.4"]]
 
   :min-lein-version "2.5.3"
 
@@ -16,12 +15,14 @@
 
   :figwheel {:css-dirs ["resources/public/css"]}
 
+  :aliases {"editor" ["nightlight" "--port" "4000"]}
+
   :profiles
   {:dev
-   {:dependencies []
+   {:dependencies [[figwheel-sidecar "0.5.4-7"]]
 
-    :plugins      [[lein-figwheel "0.5.7"]]
-    }}
+    :plugins      [[lein-figwheel "0.5.7"]
+                   [nightlight/lein-nightlight "1.0.0"]]}}
 
   :cljsbuild
   {:builds
@@ -40,8 +41,4 @@
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
-                    :pretty-print    false}}
-
-    ]}
-
-  )
+                    :pretty-print    false}}]})
